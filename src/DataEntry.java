@@ -6,10 +6,10 @@ public class DataEntry extends JFrame {
     private JPanel DataEntryPanel;
     private JTextField STUDENTIDFIELD;
     private JButton enterButton;
-    private JTextField TuitionFIELD;
     private JLabel TOTAL;
-    private JTextField LabField;
-    private JTextField MisceFIELD;
+    private JTextField AMOUNTFIELD;
+    private JLabel CHANGE;
+
 
     public DataEntry() {
         setContentPane(DataEntryPanel);
@@ -22,28 +22,26 @@ public class DataEntry extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 calculate();
                 String studentname = STUDENTIDFIELD.getText();
-                String tui = TuitionFIELD.getText();
-                String lab = LabField.getText();
-                String mis = MisceFIELD.getText();
+                String amount= AMOUNTFIELD.getText();
 
                 JOptionPane.showMessageDialog(DataEntry.this,
-                        " Student: "+ studentname + "\n" +
-                                " Tuition Fee: " + tui + "\n" +
-                                " Laboratory Fee: " + lab + "\n" +
-                                " Miscellaneous Fee: " + mis + "\n"+
-                        " Total amount payment: " + TOTAL.getText() );
+                        "-------RECEIPT-------"+"\n" + "\n" +
+                                " Student: "+ studentname + "\n" +
+                                " Balance: " + "19,000 " + "\n" +
+                                " Amount to Pay: " + amount + "\n" +
+                                " Overdue Balance: " + CHANGE.getText() );
             }
         });
     }
     public void calculate(){
         try{
-            double tuition = Double.parseDouble(TuitionFIELD.getText());
-            double laboratory = Double.parseDouble(LabField.getText());
-            double miscellaneous = Double.parseDouble(MisceFIELD.getText());
-            double total = tuition + laboratory + miscellaneous;
-            TOTAL.setText(String.valueOf(total));
+            double amount2 = Double.parseDouble(AMOUNTFIELD.getText());
+            double balancefee = 19000;
+            double change = amount2 - balancefee;
+
+            CHANGE.setText(String.valueOf(change));
         }catch(NumberFormatException e ){
-            TOTAL.setText(" Invalid ");
+            CHANGE.setText(" Invalid ");
 
         }
     }

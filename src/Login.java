@@ -14,11 +14,22 @@ public class Login extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400,300);
         setLocationRelativeTo(null);
+
         LOGINButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Dashboard().setVisible(true);
-                dispose();
+
+                String user = USERNAMEFIELD.getText();
+                String pass = PASSWORDFIELD.getText();
+
+                if(user.equals("admin") && pass.equals("1234")) {
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Login!");
+                }
+
             }
         });
     }

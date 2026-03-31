@@ -12,7 +12,7 @@ public class Dashboard extends JFrame{
         setContentPane(DashboardPanel);
         setTitle(" Dashboard ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize( 400, 400);
+        setSize( 500, 500);
         setLocationRelativeTo(null);
 
         makePaymentButton.addActionListener(new ActionListener() {
@@ -28,8 +28,8 @@ public class Dashboard extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog( Dashboard.this, " Status: \n" +
                         " Total Students: 150 " + "\n" +
-                        " Fees Collected: Php 50,000 " + "\n" +
-                        " Overdue Balances: Php 12,000 ");
+                        " Fees Collected: Php 2,850,000 " + "\n" +
+                        " Overdue Balances: Php 15,000 ");
 
             }
         });
