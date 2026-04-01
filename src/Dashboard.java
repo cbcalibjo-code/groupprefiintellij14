@@ -26,16 +26,18 @@ public class Dashboard extends JFrame{
         viewRecordsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 JOptionPane.showMessageDialog( Dashboard.this, " Status: \n" +
                         " Total Students: 150 " + "\n" +
-                        " Fees Collected: Php 2,850,000 " + "\n" +
-                        " Overdue Balances: Php 15,000 ");
+                        " Fees Collected: Php 2,850,000"+ "\n" +
+                        " Overdue Balances: Php 12,000 ");
 
             }
         });
         logOutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Login().setVisible(true);
                 dispose();
 
             }

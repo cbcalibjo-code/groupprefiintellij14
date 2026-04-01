@@ -25,11 +25,18 @@ public class DataEntry extends JFrame {
                 String amount= AMOUNTFIELD.getText();
 
                 JOptionPane.showMessageDialog(DataEntry.this,
-                        "-------RECEIPT-------"+"\n" + "\n" +
+                        "---------------RECEIPT-----------------"+"\n" + "\n" +
                                 " Student: "+ studentname + "\n" +
-                                " Balance: " + "19,000 " + "\n" +
                                 " Amount to Pay: " + amount + "\n" +
-                                " Overdue Balance: " + CHANGE.getText() );
+                                " Balance: " + "19,000 " + "\n" +
+                                "----------------------------------------------" +
+                                "\n Overdue Balance: " + CHANGE.getText()+ "\n"+
+                                "\n----------------------------------------------" +
+                                "\nThank you for paying your balance fee" +
+                                "\n----------------------------------------------"
+                                );
+                new Dashboard().setVisible(true);
+                dispose();
             }
         });
     }
